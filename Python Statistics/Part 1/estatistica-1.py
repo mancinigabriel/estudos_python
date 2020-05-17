@@ -163,4 +163,35 @@ dataset.Altura.hist(bins = 50, figsize = (12,6))
 dist_freq_quantitativas_personalizadas['Frequência'].plot.bar(
     width = 1, alpha = 0.6, figsize = (12,6))
 
+# %%Box Plots
+ax = sns.boxplot(x = 'Altura', data = dataset, orient= 'v')
+ax.figure.set_size_inches(2,6)
+ax.set_title('Altura', fontsize=18)
+ax.set_xlabel('Metros', fontsize = 14)
+
+
+# %%
+ax = sns.boxplot(x = 'Renda', data = dataset.query('Renda < 10000'), orient= 'h')
+ax.figure.set_size_inches(12,4)
+ax.set_title('Renda', fontsize=18)
+ax.set_xlabel('R$', fontsize = 14)
+
+# %%
+ax = sns.boxplot(x = 'Renda', y = 'Sexo', data = dataset.query('Renda < 10000'), orient= 'h')
+ax.figure.set_size_inches(12,4)
+ax.set_title('Renda', fontsize=18)
+ax.set_xlabel('R$', fontsize = 14)
+
+# %%
+ax = sns.boxplot(x = 'Anos de Estudo', data = dataset, orient= 'h')
+ax.figure.set_size_inches(12,4)
+ax.set_title('Anos de Estudo', fontsize=18)
+ax.set_xlabel('R$', fontsize = 14)
+
+# %%
+ax = sns.boxplot(x = 'Anos de Estudo', y = 'Sexo', data = dataset, orient= 'h')
+ax.figure.set_size_inches(12,4)
+ax.set_title('Anos de Estudo', fontsize=18)
+ax.set_xlabel('R$', fontsize = 14)
+
 # %%
